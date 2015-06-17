@@ -1,0 +1,3 @@
+bruninoit_cookieportal_controller:
+    path: /cookie_portal
+    defaults: { _controller: bruninoit.cookieportal.controller:handle }
