@@ -41,8 +41,8 @@ class main
 	{
 	if($this->request->variable('ok_cookie', 0))
 	{
-	//set cookie
-	//redirect vecchia pagina
+	$this->template->assign_var('COOKIE_DISPLAY', true);
+	$this->user->set_cookie('brunino_cookieportal', true, strtotime('+1 year'));
 	$template="ok.html";
 	$title="Redirect in corso...";
 	}
