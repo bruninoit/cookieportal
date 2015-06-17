@@ -6,6 +6,7 @@ services:
             - @request
             - @config
             - @user
+            - @controller.helper
         tags:
             - { name: event.listener }
     bruninoit.cookieportal.controller:
