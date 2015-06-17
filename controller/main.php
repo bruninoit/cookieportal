@@ -37,7 +37,7 @@ class main
 		$this->request  = $request;
 	}
 
-	public function portal($type)
+	public function portal()
 	{
 	if($this->request->variable('ok_cookie', 0))
 	{
