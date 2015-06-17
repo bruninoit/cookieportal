@@ -1,0 +1,19 @@
+services:
+    bruninoit.cookieportal.listener:
+        class: bruninoit\cookieportal\event\main_listener
+        arguments:
+            - @template
+            - @request
+            - @config
+            - @user
+        tags:
+            - { name: event.listener }
+    bruninoit.cookieportal.controller:
+        class: bruninoit\cookieportal\controller\main
+        arguments:
+            - @dbal.conn
+            - @user
+            - @config
+            - @controller.helper
+            - @template
+            - @request
