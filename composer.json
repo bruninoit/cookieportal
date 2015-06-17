@@ -1,0 +1,31 @@
+{
+"name": "bruninoit/cookieportal",
+"type": "phpbb-extension",
+"description": "Blocca tutti i cookie, mostrando un portale che chiede il consenso degli utenti",
+"homepage": "https://github.com/bruninoit/cookieportal",
+"version": "0.1.0-a1",
+"time": "2015-06-22",
+"license": "GPL-2.0",
+"authors": [
+{
+"name": "brunino",
+"email": "brunino@altervista.org",
+"homepage": "http://www.brunino.altervista.org",
+"role": "Developer"
+}
+],
+"require": {
+"php": ">=5.3"
+},
+"extra": {
+"display-name": "Cookie Portal",
+"soft-require": {
+"phpbb/phpbb": "3.1.*@dev"
+},
+"version-check": {
+"host": "brunino.altervista.org",
+"directory": "/version/",
+"filename": "cookieportal.json"
+}
+}
+}
