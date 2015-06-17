@@ -27,17 +27,19 @@ class main_listener implements EventSubscriberInterface
 	protected $request;
     protected $config;
     protected $user;
+    protected $helper;
 
 	/**
 	* Constructor
 	*
 	* @param \phpbb\template			$template	Template object
 	*/
-	public function __construct(\phpbb\template\template $template, \phpbb\request\request $request, \phpbb\config\config $config, \phpbb\user $user)	{
+	public function __construct(\phpbb\template\template $template, \phpbb\request\request $request, \phpbb\config\config $config, \phpbb\user $user, \phpbb\controller\helper $helper)	{
         $this->template = $template;
         $this->request = $request; 
         $this->config = $config;
         $this->user = $user;
+        $this->helper = $helper;
 	}
 	public function cookie_portal($event)
 	{
