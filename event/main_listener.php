@@ -50,7 +50,16 @@ class main_listener implements EventSubscriberInterface
     $this->template->assign_var('COOKIE_DISPLAY', true);
     }else{
     $url = $this->helper->route('bruninoit_cookieportal_controller');
-    header("location: $url");
+     if(!strstr($this->request->server('SCRIPT_URL', ''), "cookie") and !strstr($this->request->server('SCRIPT_URL', ''), "mobiquo")) 
+      {
+      //echo "a";
+      //echo $this->request->variable('SCRIPT_URL', '', true); 
+       //echo $_SERVER['SCRIPT_URL'];
+       	$url_attuale=$this->request->server('REQUEST_URI', '');
+		$url_attuale=str_replace("&", "!ee!", $url_attuale);
+		$url_attuale=str_replace("?", "!pi!", $url_attuale);
+      header("location: $url?url=$url_attuale");
+      }//else echo "b";
     }
     
     
