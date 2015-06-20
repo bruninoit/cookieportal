@@ -43,6 +43,8 @@ class main_listener implements EventSubscriberInterface
 	}
 	public function cookie_portal($event)
 	{
+    //global $user;
+    $group=$this->user->data["group_id"];
     $cookie=$this->request->variable($this->config['cookie_name'] . '_brunino_cookieportal', '', true, \phpbb\request\request_interface::COOKIE);
     //if($this->request->variable('cookie_accepted', 0) and !$cookie)
     if($cookie)
@@ -54,7 +56,7 @@ class main_listener implements EventSubscriberInterface
     {
     $url="app.php/cookie_portal";
     }
-    if(!strstr($this->request->server('SCRIPT_URL', ''), "cookie") and !strstr($this->request->server('SCRIPT_URL', ''), "mobiquo")) 
+    if(!strstr($this->request->server('SCRIPT_URL', ''), "cookie") and !strstr($this->request->server('SCRIPT_URL', ''), "mobiquo") and $group=!6) 
       {
       //echo "a";
       //echo $this->request->variable('SCRIPT_URL', '', true); 
