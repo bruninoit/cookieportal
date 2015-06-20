@@ -45,6 +45,12 @@ class main
 	$this->user->set_cookie('brunino_cookieportal', true, strtotime('+1 year'));
 	$template="ok.html";
 	$title="Redirect in corso...";
+    $url=$this->request->variable('url', '', true);
+	$url=str_replace("!ee!", "&", $url);
+	$url=str_replace("!pi!", "?", $url);
+    $url=str_replace("amp;", "", $url);
+    header("location: ../../../../../../../../../../..$url");
+	//echo $url;
 	}
  	if($this->request->variable('no_cookie', 0))
 	{
@@ -57,9 +63,10 @@ class main
 	//pagina avviso
 	$template="portal.html";
 	$title="Cookie";
+    $this->template->assign_var('URL_REDIRECT', $this->request->variable('url', '', true));
 	}
 
- 
+ 		
 		//$this->template->assign_var('DEMO_MESSAGE', $this->user->lang($l_message, $name));
 		return $this->helper->render($template, $title);
 	}
