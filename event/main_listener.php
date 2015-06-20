@@ -50,7 +50,11 @@ class main_listener implements EventSubscriberInterface
     $this->template->assign_var('COOKIE_DISPLAY', true);
     }else{
     $url = $this->helper->route('bruninoit_cookieportal_controller');
-     if(!strstr($this->request->server('SCRIPT_URL', ''), "cookie") and !strstr($this->request->server('SCRIPT_URL', ''), "mobiquo")) 
+    if(!strstr($url, "app.php")) //bug no app.php
+    {
+    $url="app.php/cookie_portal";
+    }
+    if(!strstr($this->request->server('SCRIPT_URL', ''), "cookie") and !strstr($this->request->server('SCRIPT_URL', ''), "mobiquo")) 
       {
       //echo "a";
       //echo $this->request->variable('SCRIPT_URL', '', true); 
