@@ -1,6 +1,30 @@
 <!-- INCLUDE overall_header.html -->
 <!-- portale -->
-<h1>Accetti i cookie?</h1>
-<a href=?ok_cookie=1&url={URL_REDIRECT}>accetti</a><br />
-<a href=?no_cookie=1>rifiuti</a>
+
+<style>
+.mybutton{
+border: solid thin #882d13;
+-webkit-border-radius: .7em;
+-moz-border-radius: .7em;
+border-radius: .7em;
+text-shadow: 0.5px 0.5px 0.5px #000;
+padding: .5em;
+}
+#acc{
+background-color: #7FFF00;
+}
+#rif{
+background-color: #FF4500;
+}
+</style>
+
+<div class="forabg" align="center">
+<h1>Questo sito utilizza cookie. Premendo su ACCETTO, accetterai ogni tipologia di cookie presente nel sito</h1>
+
+
+
+<br /><br /><br /><br /><br /><br />
+<button id="acc" class="mybutton" onclick="location.href='?ok_cookie=1&url={URL_REDIRECT}'">ACCETTO</button>&nbsp;&nbsp;&nbsp;
+<button id="rif" class="mybutton" onclick="location.href='?no_cookie=1'">RIFIUTO</button>
+</div>
 <!-- INCLUDE overall_footer.html -->
